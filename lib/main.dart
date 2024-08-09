@@ -1,5 +1,5 @@
-import 'package:cupertino_style/screens/home_screen.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_style/routes/route.dart';
+import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,9 +8,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      title: 'Simple Todo App',
+      initialRoute: AppRoutes.root,
+      onGenerateRoute: AppRoutes.generateRoute,
     );
   }
 }

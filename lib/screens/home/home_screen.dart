@@ -1,4 +1,5 @@
 import 'package:cupertino_style/models/post.dart';
+import 'package:cupertino_style/screens/posts/detail_post.dart';
 import 'package:cupertino_style/services/post_service.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 return ListTile(
                   title: Text(post.title),
                   subtitle: Text(post.body),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailPost(post: post),
+                      ),
+                    );
+                  },
                 );
               },
             );

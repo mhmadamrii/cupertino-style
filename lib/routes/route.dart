@@ -1,15 +1,19 @@
 import 'package:cupertino_style/screens/home/home_screen.dart';
+import 'package:cupertino_style/screens/onboarding/onboarding_screen.dart';
 import 'package:cupertino_style/screens/root_screen.dart';
 import 'package:cupertino_style/screens/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
+  static const String on_boarding = '/onboarding';
   static const String root = '/';
   static const String home = '/home';
   static const String setting = '/settings';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case on_boarding:
+        return MaterialPageRoute(builder: (_) => OnboardingScreen());
       case root:
         return MaterialPageRoute(builder: (_) => RootScreen());
       case home:

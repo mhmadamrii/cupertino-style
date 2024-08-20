@@ -10,11 +10,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
       debugShowCheckedModeBanner: false,
       title: 'Simple Todo App',
-      initialRoute: AppRoutes.root,
+      initialRoute: AppRoutes.on_boarding,
       onGenerateRoute: AppRoutes.generateRoute,
     );
   }

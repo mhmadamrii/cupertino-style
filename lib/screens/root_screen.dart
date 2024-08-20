@@ -28,43 +28,47 @@ class _RootScreenState extends State<RootScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF1E201E),
       appBar: AppBar(
-        title: const Text(
-          "My Todo App",
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const CircleAvatar(
-              backgroundImage: AssetImage(
-                'assets/me.png',
-              ),
-            ),
+        backgroundColor: const Color(0xFF1E201E),
+        title: ClipRRect(
+          borderRadius: BorderRadius.circular(20.0),
+          child: Image.asset(
+            'assets/me.png',
+            fit: BoxFit.cover,
+            height: 40,
           ),
-        ],
+        ),
+        automaticallyImplyLeading: false,
       ),
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.white,
+        backgroundColor: const Color(0xFF1E201E),
         currentIndex: _currentIndex,
         onTap: _onTapTapped,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
+              color: Colors.white,
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.settings,
+              Icons.search,
+              color: Colors.white,
             ),
-            label: 'Settings',
+            label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person,
+              Icons.my_library_add,
+              color: Colors.white,
             ),
-            label: 'Profile',
+            label: 'Your Library',
           ),
         ],
       ),

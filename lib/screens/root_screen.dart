@@ -40,6 +40,18 @@ class _RootScreenState extends State<RootScreen> {
           ),
         ),
         automaticallyImplyLeading: false,
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 20),
+            child: Text(
+              "Goeden Morgen",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20.5,
+              ),
+            ),
+          )
+        ],
       ),
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(

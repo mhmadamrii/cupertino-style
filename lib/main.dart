@@ -1,7 +1,16 @@
-import 'package:cupertino_style/routes/route.dart';
+import 'package:cupertino_style/screeens/home/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() => runApp(const MyApp());
+// to keep watching the provider run this command: dart run build_runner watch
+
+void main() {
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,13 +18,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.orange,
-      ),
       debugShowCheckedModeBanner: false,
-      title: 'Simple Todo App',
-      initialRoute: AppRoutes.on_boarding,
-      onGenerateRoute: AppRoutes.generateRoute,
+      title: 'RiverPod',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blueAccent,
+        ),
+      ),
+      home: HomeScreen(),
     );
   }
 }

@@ -31,13 +31,13 @@ const List<Product> allProducts = [
   ),
 ];
 
-// final productsProvider = Provider((ref) {
-//   return allProducts;
-// });
+final productsProvider = Provider((ref) {
+  return allProducts;
+});
 
-// final reduceProductProvider = Provider((ref) {
-//   return allProducts.where((p) => p.price < 2500);
-// });
+final reduceProductProvider = Provider((ref) {
+  return allProducts.where((p) => p.price < 2500);
+});
 
 @riverpod
 List<Product> products(ref) {
